@@ -8,7 +8,7 @@
  * 
  * @param boolean $count return count or rows
  * 
- * @return int | array
+ * @return int|array
  */
 function garbagecollector_extended_get_orphaned_access_collections($count = false) {
 	$dbprefix = elgg_get_config("dbprefix");
@@ -39,7 +39,7 @@ function garbagecollector_extended_get_orphaned_access_collections($count = fals
  *
  * @param boolean $count return count or rows
  *
- * @return int | array
+ * @return int|array
  */
 function garbagecollector_extended_get_orphaned_annotations($count = false) {
 	$dbprefix = elgg_get_config("dbprefix");
@@ -74,7 +74,7 @@ function garbagecollector_extended_get_orphaned_annotations($count = false) {
  *
  * @param boolean $count return count or rows
  *
- * @return int | array
+ * @return int|array
  */
 function garbagecollector_extended_get_orphaned_entities($count = false) {
 	$dbprefix = elgg_get_config("dbprefix");
@@ -106,7 +106,7 @@ function garbagecollector_extended_get_orphaned_entities($count = false) {
  *
  * @param boolean $count return count or rows
  *
- * @return int | array
+ * @return int|array
  */
 function garbagecollector_extended_get_orphaned_metadata($count = false) {
 	$dbprefix = elgg_get_config("dbprefix");
@@ -141,7 +141,7 @@ function garbagecollector_extended_get_orphaned_metadata($count = false) {
  *
  * @param boolean $count return count or rows
  *
- * @return int | array
+ * @return int|array
  */
 function garbagecollector_extended_get_orphaned_private_settings($count = false) {
 	$dbprefix = elgg_get_config("dbprefix");
@@ -171,7 +171,7 @@ function garbagecollector_extended_get_orphaned_private_settings($count = false)
  *
  * @param boolean $count return count or rows
  *
- * @return int | array
+ * @return int|array
  */
 function garbagecollector_extended_get_orphaned_relationships($count = false) {
 	$dbprefix = elgg_get_config("dbprefix");
@@ -205,7 +205,7 @@ function garbagecollector_extended_get_orphaned_relationships($count = false) {
  *
  * @param boolean $count return count or rows
  *
- * @return int | array
+ * @return int|array
  */
 function garbagecollector_extended_get_orphaned_river($count = false) {
 	$dbprefix = elgg_get_config("dbprefix");
