@@ -1,4 +1,4 @@
-# Garbage Collector Extended
+# Garbage Collector Extended [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ColdTrick/garbagecollector_extended/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ColdTrick/garbagecollector_extended/?branch=master)
 
 Cleanup orphaned data in your Elgg database
 
