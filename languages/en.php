@@ -8,13 +8,13 @@ return array(
 	
 	'garbagecollection_extended:settings:enable_gc' => "Enable extended garbage collection:",
 	
-	'garbagecollection_extended:settings:stats:access_collections' => "Orphaned access collections: %s",
-	'garbagecollection_extended:settings:stats:annotations' => "Orphaned annotations: %s",
-	'garbagecollection_extended:settings:stats:entities' => "Orphaned entities: %s",
-	'garbagecollection_extended:settings:stats:metadata' => "Orphaned metadata: %s",
-	'garbagecollection_extended:settings:stats:private_settings' => "Orphaned private settings: %s",
-	'garbagecollection_extended:settings:stats:relationships' => "Orphaned relationships: %s",
-	'garbagecollection_extended:settings:stats:river' => "Orphaned river items: %s",
+	'garbagecollection_extended:settings:stats:access_collections' => "Orphaned access collections",
+	'garbagecollection_extended:settings:stats:annotations' => "Orphaned annotations",
+	'garbagecollection_extended:settings:stats:entities' => "Orphaned entities",
+	'garbagecollection_extended:settings:stats:metadata' => "Orphaned metadata",
+	'garbagecollection_extended:settings:stats:private_settings' => "Orphaned private settings",
+	'garbagecollection_extended:settings:stats:relationships' => "Orphaned relationships",
+	'garbagecollection_extended:settings:stats:river' => "Orphaned river items",
 	
 	// cleanup
 	'garbagecollector_extended:cleanup' => "Cleaning up orphaned %s: ",

@@ -23,10 +23,8 @@ function garbagecollector_extended_get_orphaned_access_collections($count = fals
 	$sql .= ")";
 	
 	if ($count) {
-		$result = 0;
-		if ($data = get_data($sql)) {
-			$result = $data[0]->count;
-		}
+		$data = get_data($sql);
+		$result = $data ? $data[0]->count : 0;
 	} else {
 		$result = get_data($sql, "garbagecollector_extended_id_only");
 	}
@@ -58,10 +56,8 @@ function garbagecollector_extended_get_orphaned_annotations($count = false) {
 	$sql .= "))";
 	
 	if ($count) {
-		$result = 0;
-		if ($data = get_data($sql)) {
-			$result = $data[0]->count;
-		}
+		$data = get_data($sql);
+		$result = $data ? $data[0]->count : 0;
 	} else {
 		$result = get_data($sql, "garbagecollector_extended_id_only");
 	}
@@ -90,10 +86,8 @@ function garbagecollector_extended_get_orphaned_entities($count = false) {
 	$sql .= " AND enabled = 'yes'";
 	
 	if ($count) {
-		$result = 0;
-		if ($data = get_data($sql)) {
-			$result = $data[0]->count;
-		}
+		$data = get_data($sql);
+		$result = $data ? $data[0]->count : 0;
 	} else {
 		$result = get_data($sql, "garbagecollector_extended_guid_only");
 	}
@@ -125,10 +119,8 @@ function garbagecollector_extended_get_orphaned_metadata($count = false) {
 	$sql .= "))";
 	
 	if ($count) {
-		$result = 0;
-		if ($data = get_data($sql)) {
-			$result = $data[0]->count;
-		}
+		$data = get_data($sql);
+		$result = $data ? $data[0]->count : 0;
 	} else {
 		$result = get_data($sql, "garbagecollector_extended_id_only");
 	}
@@ -155,10 +147,8 @@ function garbagecollector_extended_get_orphaned_private_settings($count = false)
 	$sql .= ")";
 	
 	if ($count) {
-		$result = 0;
-		if ($data = get_data($sql)) {
-			$result = $data[0]->count;
-		}
+		$data = get_data($sql);
+		$result = $data ? $data[0]->count : 0;
 	} else {
 		$result = get_data($sql, "garbagecollector_extended_id_only");
 	}
@@ -189,10 +179,8 @@ function garbagecollector_extended_get_orphaned_relationships($count = false) {
 	$sql .= ")";
 	
 	if ($count) {
-		$result = 0;
-		if ($data = get_data($sql)) {
-			$result = $data[0]->count;
-		}
+		$data = get_data($sql);
+		$result = $data ? $data[0]->count : 0;
 	} else {
 		$result = get_data($sql, "garbagecollector_extended_id_only");
 	}
@@ -223,10 +211,8 @@ function garbagecollector_extended_get_orphaned_river($count = false) {
 	$sql .= ")";
 	
 	if ($count) {
-		$result = 0;
-		if ($data = get_data($sql)) {
-			$result = $data[0]->count;
-		}
+		$data = get_data($sql);
+		$result = $data ? $data[0]->count : 0;
 	} else {
 		$result = get_data($sql, "garbagecollector_extended_id_only");
 	}
