@@ -6,10 +6,12 @@
 /**
  * handles the extended garbage collection 
  * 
- * @param string $hook
- * @param string $type
- * @param mixed $returnvalue
- * @param mixed $params
+ * @param string $hook        hookname
+ * @param string $type        hooktype
+ * @param mixed  $returnvalue current return value
+ * @param mixed  $params      original parameters
+ * 
+ * @return void
  */
 function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params) {
 	global $CONFIG;
@@ -119,10 +121,11 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params) 
 /**
  * make sure can_edit_entity returns true in case of extended garbage collection
  * 
- * @param string $hook
- * @param string $type
- * @param mixed $returnvalue
- * @param array $params
+ * @param string $hook        hookname
+ * @param string $type        hooktype
+ * @param mixed  $returnvalue current return value
+ * @param mixed  $params      original parameters
+ * 
  * @return boolean
  */
 function garbagecollector_extended_permissions_hook($hook, $type, $returnvalue, $params) {
