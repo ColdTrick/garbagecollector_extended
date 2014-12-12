@@ -1,11 +1,11 @@
 <?php
 
-	$plugin = $vars["entity"];
+$plugin = $vars["entity"];
 
-	$noyes_options = array(
-		"no" => elgg_echo("option:no"),
-		"yes" => elgg_echo("option:yes")
-	);
+$noyes_options = array(
+	"no" => elgg_echo("option:no"),
+	"yes" => elgg_echo("option:yes")
+);
 ?>
 <div>
 	<?php echo elgg_echo("garbagecollection_extended:settings:disclaimer"); ?>
