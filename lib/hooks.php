@@ -1,4 +1,7 @@
 <?php
+/**
+ * Hooks for Garbage Collector Extended
+ */
 
 /**
  * handles the extended garbage collection 
@@ -8,7 +11,7 @@
  * @param mixed $returnvalue
  * @param mixed $params
  */
-function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
+function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params) {
 	global $CONFIG;
 	global $GARBAGECOLLECTOR_EXTENDED_GC;
 	
@@ -19,10 +22,10 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
 	elgg_set_ignore_access(true);
 	
 	// cleanup entities
-	if($entity_guids = garbagecollector_extended_get_orphaned_entities()){
+	if ($entity_guids = garbagecollector_extended_get_orphaned_entities()) {
 		echo vsprintf(elgg_echo("garbagecollector_extended:cleanup"), "entities");
 		
-		foreach($entity_guids as $guid){
+		foreach ($entity_guids as $guid) {
 			delete_entity($guid);
 		}
 		
@@ -30,10 +33,10 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
 	}
 	
 	// cleanup access collections
-	if($acl_ids = garbagecollector_extended_get_orphaned_access_collections()){
+	if ($acl_ids = garbagecollector_extended_get_orphaned_access_collections()) {
 		echo vsprintf(elgg_echo("garbagecollector_extended:cleanup"), "access collections");
 		
-		foreach($acl_ids as $id){
+		foreach ($acl_ids as $id) {
 			delete_access_collection($id);
 		}
 		
@@ -41,10 +44,10 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
 	}
 	
 	// cleanup annotations
-	if($anno_ids = garbagecollector_extended_get_orphaned_annotations()){
+	if ($anno_ids = garbagecollector_extended_get_orphaned_annotations()) {
 		echo vsprintf(elgg_echo("garbagecollector_extended:cleanup"), "annotations");
 		
-		foreach($anno_ids as $id){
+		foreach ($anno_ids as $id) {
 			delete_annotation($id);
 		}
 		
@@ -52,10 +55,10 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
 	}
 	
 	// cleanup metadata
-	if($meta_ids = garbagecollector_extended_get_orphaned_metadata()){
+	if ($meta_ids = garbagecollector_extended_get_orphaned_metadata()) {
 		echo vsprintf(elgg_echo("garbagecollector_extended:cleanup"), "metadata");
 		
-		foreach($meta_ids as $id){
+		foreach ($meta_ids as $id) {
 			// We need to manualy delete metadata as the Elgg functions don't work because this is orphaned metadata
 			// also we need to delete this one by one because of potential long query strings
 			$sql = "DELETE FROM " . $CONFIG->dbprefix . "metadata";
@@ -68,10 +71,10 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
 	}
 	
 	// cleanup private settings
-	if($private_ids = garbagecollector_extended_get_orphaned_private_settings()){
+	if ($private_ids = garbagecollector_extended_get_orphaned_private_settings()) {
 		echo vsprintf(elgg_echo("garbagecollector_extended:cleanup"), "private settings");
 		
-		foreach($private_ids as $id){
+		foreach ($private_ids as $id) {
 			// We need to manualy delete private settings as Elgg doesn't have a function fot this
 			// also we need to delete this one by one because of potential long query strings
 			$sql = "DELETE FROM " . $CONFIG->dbprefix . "private_settings";
@@ -84,10 +87,10 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
 	}
 	
 	// cleanup relationships
-	if($rel_ids = garbagecollector_extended_get_orphaned_relationships()){
+	if ($rel_ids = garbagecollector_extended_get_orphaned_relationships()) {
 		echo vsprintf(elgg_echo("garbagecollector_extended:cleanup"), "relationships");
 		
-		foreach($rel_ids as $id){
+		foreach ($rel_ids as $id) {
 			delete_relationship($id);
 		}
 		
@@ -95,17 +98,17 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
 	}
 	
 	// cleanup river
-	if($river_ids = garbagecollector_extended_get_orphaned_river()){
+	if ($river_ids = garbagecollector_extended_get_orphaned_river()) {
 		echo vsprintf(elgg_echo("garbagecollector_extended:cleanup"), "river items");
 		
-		foreach($river_ids as $id){
+		foreach ($river_ids as $id) {
 			remove_from_river_by_id($id);
 		}
 		
 		echo elgg_echo("garbagecollector_extended:done") . "\n";
 	}
 	
-	// because we cleaned up alot do metastrings again
+	// because we cleaned up a lot, do metastrings again
 	delete_orphaned_metastrings();
 	
 	// restore access settings
@@ -122,10 +125,10 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params){
  * @param array $params
  * @return boolean
  */
-function garbagecollector_extended_permissions_hook($hook, $type, $returnvalue, $params){
+function garbagecollector_extended_permissions_hook($hook, $type, $returnvalue, $params) {
 	global $GARBAGECOLLECTOR_EXTENDED_GC;
 	
-	if($GARBAGECOLLECTOR_EXTENDED_GC === true){
+	if ($GARBAGECOLLECTOR_EXTENDED_GC === true) {
 		return true;
 	}
 }

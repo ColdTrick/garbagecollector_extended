@@ -1,11 +1,21 @@
 <?php
+/**
+ * Functions for Garbage Collector Extended
+ */
 
-function garbagecollector_extended_get_orphaned_access_collections($count = false){
+/**
+ * Return orphaned access collections
+ * 
+ * @param boolean $count return count or rows
+ * 
+ * @return int | array
+ */
+function garbagecollector_extended_get_orphaned_access_collections($count = false) {
 	global $CONFIG;
 	
 	$result = false;
 	
-	if($count){
+	if ($count) {
 		$sql = "SELECT count(id) as count";
 	} else {
 		$sql = "SELECT *";
@@ -18,9 +28,9 @@ function garbagecollector_extended_get_orphaned_access_collections($count = fals
 	$sql .= " FROM " . $CONFIG->dbprefix . "entities";
 	$sql .= ")";
 	
-	if($count){
+	if ($count) {
 		$result = 0;
-		if($data = get_data($sql)){
+		if ($data = get_data($sql)) {
 			$result = $data[0]->count;
 		}
 	} else {
@@ -30,12 +40,19 @@ function garbagecollector_extended_get_orphaned_access_collections($count = fals
 	return $result;
 }
 
-function garbagecollector_extended_get_orphaned_annotations($count = false){
+/**
+ * Return orphaned annotations
+ *
+ * @param boolean $count return count or rows
+ *
+ * @return int | array
+ */
+function garbagecollector_extended_get_orphaned_annotations($count = false) {
 	global $CONFIG;
 	
 	$result = false;
 	
-	if($count){
+	if ($count) {
 		$sql = "SELECT count(id) as count";
 	} else {
 		$sql = "SELECT *";
@@ -52,9 +69,9 @@ function garbagecollector_extended_get_orphaned_annotations($count = false){
 	$sql .= " FROM " . $CONFIG->dbprefix . "entities";
 	$sql .= "))";
 	
-	if($count){
+	if ($count) {
 		$result = 0;
-		if($data = get_data($sql)){
+		if ($data = get_data($sql)) {
 			$result = $data[0]->count;
 		}
 	} else {
@@ -64,12 +81,19 @@ function garbagecollector_extended_get_orphaned_annotations($count = false){
 	return $result;
 }
 
-function garbagecollector_extended_get_orphaned_entities($count = false){
+/**
+ * Return orphaned entities
+ *
+ * @param string $count return count or rows
+ *
+ * @return int | array
+ */
+function garbagecollector_extended_get_orphaned_entities($count = false) {
 	global $CONFIG;
 	
 	$result = false;
 	
-	if($count){
+	if ($count) {
 		$sql = "SELECT count(guid) as count";
 	} else {
 		$sql = "SELECT *";
@@ -83,9 +107,9 @@ function garbagecollector_extended_get_orphaned_entities($count = false){
 	$sql .= ")";
 	$sql .= " AND enabled = 'yes'";
 	
-	if($count){
+	if ($count) {
 		$result = 0;
-		if($data = get_data($sql)){
+		if ($data = get_data($sql)) {
 			$result = $data[0]->count;
 		}
 	} else {
@@ -95,12 +119,19 @@ function garbagecollector_extended_get_orphaned_entities($count = false){
 	return $result;
 }
 
-function garbagecollector_extended_get_orphaned_metadata($count = false){
+/**
+ * Return orphaned metadata
+ *
+ * @param string $count return count or rows
+ *
+ * @return int | array
+ */
+function garbagecollector_extended_get_orphaned_metadata($count = false) {
 	global $CONFIG;
 	
 	$result = false;
 	
-	if($count){
+	if ($count) {
 		$sql = "SELECT count(id) as count";
 	} else {
 		$sql = "SELECT *";
@@ -117,9 +148,9 @@ function garbagecollector_extended_get_orphaned_metadata($count = false){
 	$sql .= " FROM " . $CONFIG->dbprefix . "entities";
 	$sql .= "))";
 	
-	if($count){
+	if ($count) {
 		$result = 0;
-		if($data = get_data($sql)){
+		if ($data = get_data($sql)) {
 			$result = $data[0]->count;
 		}
 	} else {
@@ -129,12 +160,19 @@ function garbagecollector_extended_get_orphaned_metadata($count = false){
 	return $result;
 }
 
-function garbagecollector_extended_get_orphaned_private_settings($count = false){
+/**
+ * Return orphaned private settings
+ *
+ * @param string $count return count or rows
+ *
+ * @return int | array
+ */
+function garbagecollector_extended_get_orphaned_private_settings($count = false) {
 	global $CONFIG;
 	
 	$result = false;
 	
-	if($count){
+	if ($count) {
 		$sql = "SELECT count(id) as count";
 	} else {
 		$sql = "SELECT *";
@@ -146,9 +184,9 @@ function garbagecollector_extended_get_orphaned_private_settings($count = false)
 	$sql .= " FROM " . $CONFIG->dbprefix . "entities";
 	$sql .= ")";
 	
-	if($count){
+	if ($count) {
 		$result = 0;
-		if($data = get_data($sql)){
+		if ($data = get_data($sql)) {
 			$result = $data[0]->count;
 		}
 	} else {
@@ -158,12 +196,19 @@ function garbagecollector_extended_get_orphaned_private_settings($count = false)
 	return $result;
 }
 
-function garbagecollector_extended_get_orphaned_relationships($count = false){
+/**
+ * Return orphaned relationships
+ *
+ * @param string $count return count or rows
+ *
+ * @return int | array
+ */
+function garbagecollector_extended_get_orphaned_relationships($count = false) {
 	global $CONFIG;
 	
 	$result = false;
 	
-	if($count){
+	if ($count) {
 		$sql = "SELECT count(id) as count";
 	} else {
 		$sql = "SELECT *";
@@ -179,9 +224,9 @@ function garbagecollector_extended_get_orphaned_relationships($count = false){
 	$sql .= " FROM " . $CONFIG->dbprefix . "entities";
 	$sql .= ")";
 	
-	if($count){
+	if ($count) {
 		$result = 0;
-		if($data = get_data($sql)){
+		if ($data = get_data($sql)) {
 			$result = $data[0]->count;
 		}
 	} else {
@@ -191,12 +236,19 @@ function garbagecollector_extended_get_orphaned_relationships($count = false){
 	return $result;
 }
 
-function garbagecollector_extended_get_orphaned_river($count = false){
+/**
+ * Return orphaned river items
+ *
+ * @param string $count return count or rows
+ *
+ * @return int | array
+ */
+function garbagecollector_extended_get_orphaned_river($count = false) {
 	global $CONFIG;
 	
 	$result = false;
 	
-	if($count){
+	if ($count) {
 		$sql = "SELECT count(id) as count";
 	} else {
 		$sql = "SELECT *";
@@ -212,9 +264,9 @@ function garbagecollector_extended_get_orphaned_river($count = false){
 	$sql .= " FROM " . $CONFIG->dbprefix . "entities";
 	$sql .= ")";
 	
-	if($count){
+	if ($count) {
 		$result = 0;
-		if($data = get_data($sql)){
+		if ($data = get_data($sql)) {
 			$result = $data[0]->count;
 		}
 	} else {
@@ -224,10 +276,24 @@ function garbagecollector_extended_get_orphaned_river($count = false){
 	return $result;
 }
 
-function garbagecollector_extended_guid_only($row){
+/**
+ * Return guid from data row
+ *
+ * @param stdClass $row row data
+ *
+ * @return int
+ */
+function garbagecollector_extended_guid_only($row) {
 	return (int) $row->guid;
 }
 
-function garbagecollector_extended_id_only($row){
+/**
+ * Return id from data row
+ * 
+ * @param stdClass $row row data
+ * 
+ * @return int
+ */
+function garbagecollector_extended_id_only($row) {
 	return (int) $row->id;
 }
