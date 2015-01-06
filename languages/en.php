@@ -19,5 +19,9 @@ return array(
 	// cleanup
 	'garbagecollector_extended:cleanup' => "Cleaning up orphaned %s: ",
 	'garbagecollector_extended:done' => "DONE",
+	
+	// widgets
+	'garbagecollector_extended:widgets:garbagecollector_extended:title' => "Garbage Collector Stats",
+	'garbagecollector_extended:widgets:garbagecollector_extended:description' => "Shows garbage collector counters",
 );
 	

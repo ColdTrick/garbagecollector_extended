@@ -15,6 +15,8 @@ function garbagecollector_extended_init() {
 		elgg_register_plugin_hook_handler("permissions_check", "all", "garbagecollector_extended_permissions_hook");
 		elgg_register_plugin_hook_handler("gc", "system", "garbagecollector_extended_gc_hook", 400);
 	}
+	
+	elgg_register_widget_type("garbagecollector_extended", elgg_echo("garbagecollector_extended:widgets:garbagecollector_extended:title"), elgg_echo("garbagecollector_extended:widgets:garbagecollector_extended:description"), array("admin"));
 }
 
 // register default Elgg event
