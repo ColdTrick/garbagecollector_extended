@@ -10,7 +10,7 @@ $noyes_options = array(
 <div>
 	<?php echo elgg_echo("garbagecollection_extended:settings:disclaimer"); ?>
 </div>
-<br />
+
 <div>
 	<?php 
 		echo elgg_echo("garbagecollection_extended:settings:enable_gc");
