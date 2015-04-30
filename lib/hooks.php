@@ -111,7 +111,7 @@ function garbagecollector_extended_gc_hook($hook, $type, $returnvalue, $params) 
 	}
 	
 	// because we cleaned up a lot, do metastrings again
-	delete_orphaned_metastrings();
+	garbagecollector_orphaned_metastrings();
 	
 	// restore access settings
 	elgg_set_ignore_access($ia);
