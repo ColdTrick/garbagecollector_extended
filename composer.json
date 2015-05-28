@@ -1,0 +1,17 @@
+{
+	"name": "coldtrick/garbagecollector_extended",
+	"description": "Cleanup orphaned data in your Elgg database",
+	"type": "elgg-plugin",
+	"keywords": ["elgg", "plugin"],
+	"license": "GPL-2.0",
+	"support": {
+		"source": "https://github.com/ColdTrick/garbagecollector_extended",
+		"issues": "https://github.com/ColdTrick/garbagecollector_extended/issues"
+	},
+	"require": {
+		"composer/installers": "^1.0.8"
+	},
+	"require-dev": {
+		"coldtrick/sniffs": "dev-master"
+	}
+}
