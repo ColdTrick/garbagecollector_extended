@@ -5,13 +5,13 @@
 
 /**
  * Return orphaned access collections
- * 
+ *
  * @param boolean $count return count or rows
- * 
+ *
  * @return int|array
  */
 function garbagecollector_extended_get_orphaned_access_collections($count = false) {
-	$dbprefix = elgg_get_config("dbprefix");
+	$dbprefix = elgg_get_config('dbprefix');
 	
 	$sql = $count ? "SELECT count(id) as count" : "SELECT *";
 	
@@ -26,7 +26,7 @@ function garbagecollector_extended_get_orphaned_access_collections($count = fals
 		$data = get_data($sql);
 		$result = $data ? $data[0]->count : 0;
 	} else {
-		$result = get_data($sql, "garbagecollector_extended_id_only");
+		$result = get_data($sql, 'garbagecollector_extended_id_only');
 	}
 	
 	return $result;
@@ -40,7 +40,7 @@ function garbagecollector_extended_get_orphaned_access_collections($count = fals
  * @return int|array
  */
 function garbagecollector_extended_get_orphaned_annotations($count = false) {
-	$dbprefix = elgg_get_config("dbprefix");
+	$dbprefix = elgg_get_config('dbprefix');
 	
 	$sql = $count ? "SELECT count(id) as count" : "SELECT *";
 		
@@ -214,7 +214,7 @@ function garbagecollector_extended_get_orphaned_river($count = false) {
 		$data = get_data($sql);
 		$result = $data ? $data[0]->count : 0;
 	} else {
-		$result = get_data($sql, "garbagecollector_extended_id_only");
+		$result = get_data($sql, 'garbagecollector_extended_id_only');
 	}
 	
 	return $result;
@@ -233,9 +233,9 @@ function garbagecollector_extended_guid_only($row) {
 
 /**
  * Return id from data row
- * 
+ *
  * @param stdClass $row row data
- * 
+ *
  * @return int
  */
 function garbagecollector_extended_id_only($row) {

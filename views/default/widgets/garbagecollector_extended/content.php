@@ -1,3 +1,3 @@
 <?php
 
-echo elgg_view("garbagecollector_extended/counters");
+echo elgg_view('garbagecollector_extended/counters');

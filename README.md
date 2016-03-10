@@ -1,5 +1,6 @@
 # Garbage Collector Extended 
 
+[![Build Status](https://scrutinizer-ci.com/g/ColdTrick/garbagecollector_extended/badges/build.png?b=master)](https://scrutinizer-ci.com/g/ColdTrick/garbagecollector_extended/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ColdTrick/garbagecollector_extended/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ColdTrick/garbagecollector_extended/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/coldtrick/garbagecollector_extended/v/stable.svg)](https://packagist.org/packages/coldtrick/garbagecollector_extended)
 [![License](https://poser.pugx.org/coldtrick/garbagecollector_extended/license.svg)](https://packagist.org/packages/coldtrick/garbagecollector_extended)
