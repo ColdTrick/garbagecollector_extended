@@ -1,5 +1,23 @@
-Version Information
-===================
+Version history
+===============
+
+3.0 (2016-03-10):
+
+- added: composer support
+- added: garbage collectors stats can be added as an admin widget
+- added function docs
+- added scrutinizer badge
+- changed: updated for Elgg 2.0
+- code improvements
+- fixed: function doc did not have the correct return type
+- fixed call to private elgg function
+- fixed function doc style
+- fixed line endings
+- removed unnecessary br
+- replace deprecated functions and views
+- standardized line indentation
+- updated manifest format
+- updated readme and changes
 
 1.0 (2011-10-19):
 
